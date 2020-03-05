@@ -12,7 +12,7 @@ jobs:
             - athena_type_converter*
   upload:
     docker:
-      - image: circleci/python:2.7
+      - image: circleci/python:3.7
     steps:
       - run: sudo pip install twine
       - attach_workspace:
