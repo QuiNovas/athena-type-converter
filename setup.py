@@ -18,7 +18,7 @@ app_install_requires = []
 setup(
     name='athena-type-converter',
 
-    version='0.0.1',
+    version='0.0.2',
 
     description='Helper functions to convert types returned from Athena into Python types',
     long_description='Helper functions to convert types returned from Athena into Python types',
