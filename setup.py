@@ -1,32 +1,9 @@
-import pypandoc
-
 from setuptools import setup, find_packages
 # To use a consistent encoding
 from codecs import open
 from os import path
 
 
-here = path.abspath(path.dirname(__file__))
-
-# Convert the README.md to README.rst
-with open('README.rst', 'w', encoding='utf-8') as readme:
-    readme.write(pypandoc.convert('README.md', 'rst', format='markdown'))
-
-# TODO: Change the following variables to match your app
-app_name = 'appsync-function-uploader'
-
-# Versions should comply with PEP440.  For a discussion on single-sourcing
-# the version across setup.py and the project code, see
-# https://packaging.python.org/en/latest/single_source_version.html
-app_version = '0.0.1'
-
-app_description = 'Uploads request and response VTL templates for an API ID, type, field and datasource'
-
-# How mature is this project? Common values are
-#   3 - Alpha
-#   4 - Beta
-#   5 - Production/Stable
-app_dev_status = '3 - Alpha'
 
 # What does your project relate to?
 app_keywords = 'quinovas'
@@ -35,18 +12,18 @@ app_keywords = 'quinovas'
 # your project is installed. For an analysis of "install_requires" vs pip's
 # requirements files see:
 # https://packaging.python.org/en/latest/requirements.html
-app_install_requires = ['argparse', 'boto3>=1.9.156']
+app_install_requires = []
 
 
 setup(
-    name=app_name,
+    name='athena-type-converter',
 
-    version=app_version,
+    version='0.0.1',
 
-    description=app_description,
-    long_description=pypandoc.convert('README.md', 'rst', format='markdown'),
+    description='Helper functions to convert types returned from Athena into Python types',
+    long_description='Helper functions to convert types returned from Athena into Python types',
 
-    url='https://github.com/QuiNovas/appsync-resolver-uploader',
+    url='https://github.com/QuiNovas/athena-type-converter',
 
     author='Joseph Wortmann',
     author_email='joseph.wortmann@gmail.com',
@@ -55,7 +32,7 @@ setup(
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        'Development Status :: '+app_dev_status,
+        'Development Status :: 3 - Alpha',
 
         # Indicate who your project is intended for
         'Topic :: System :: Software Distribution',
@@ -65,12 +42,10 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
 
-    keywords=app_keywords,
+    keywords='quinovas',
 
-    install_requires=app_install_requires,
+    install_requires=[],
 
     package_dir={'': 'src'},
     packages=find_packages('src'),
-
-    setup_requires=['pypandoc'],
 )
